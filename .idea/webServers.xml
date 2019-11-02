@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="0c079cc1-7cf7-42cb-b066-ba20993d6ad1" name="firma" url="http://s1.transweb.pl">
+        <fileTransfer host="s1.transweb.pl" port="22" privateKey="$USER_HOME$/.ssh/id_rsa" rootFolder="/home/docker/trans-stack-docker/hello/public_webservice" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,13 @@
+{
+    "name": "msobiecki/framework",
+    "require": {
+        "filp/whoops": "^2.5",
+        "php-di/php-di": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Framework\\Core\\": "core/",
+            "Framework\\App\\": "app/"
+        }
+    }
+}
