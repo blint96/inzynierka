@@ -6,16 +6,10 @@ use Framework\Core\Controller as Controller;
 
 class Hello extends Controller {
 
-	/*public function __construct() {
-		echo "Test kontrolera.";
-	}*/
-
 	public function index() {
-	    var_dump($this->getContainer());
-    }
+	    //var_dump($this->getContainer());
+	    var_dump("hello controller");
 
-	public function test() {
-		//var_dump($this->getContainer());
-		//var_dump($this->getContainer()->get("test"));
-	}
+	    var_dump($this->getContainer()->get("app.router"));
+    }
 }

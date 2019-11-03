@@ -73,14 +73,23 @@ $container = $builder->build();
 $router = new \Framework\Core\Router($config['routes'], $config['default_route']);
 $target = $router->route();
 
-$class = \Framework\Core\Controller::factory($target['controller'], $target['method']);
+/*
+ *---------------------------------------------------------------
+ * ASSIGN VALUES TO DI
+ *---------------------------------------------------------------
+ */
+$container->set("app.router", $router);
+
+/*
+ *---------------------------------------------------------------
+ * INIT APP
+ *---------------------------------------------------------------
+ */
+$class = \Framework\Core\Controller::factory($target['controller']);
 $class->setContainer($container);
-$class->test();
 
-// TODO: make routing here and inject router into controller
-// TODO: add to router every route specified in controllers
-// for purposes like: redirect from one controller to other
-
-//$controller = new \Framework\App\Controllers\Hello();
-//$controller->setContainer($container);
-//$controller->test();
+// fire method
+if($target['method'] !== NULL)
+    $class->{$target['method']}();
+else
+    $class->{"index"}();

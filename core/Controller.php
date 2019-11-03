@@ -2,6 +2,8 @@
 
 namespace Framework\Core;
 
+use mysql_xdevapi\Exception;
+
 /**
  * Base Controller class that define main methods
  */
@@ -9,30 +11,18 @@ abstract class Controller {
 
 	private $container = null;
 
-	public function __construct($method = NULL)
-    {
-        if($method !== NULL)
-            return $this->{$method}();
-        else
-            return $this->{"index"}();
+    public static function factory($className) {
+	    $class = $className;
+	    return new $class();
     }
 
-    public static function factory($className, $method = NULL) {
-	    $class = $className;
-	    if($method !== NULL) {
-            return new $class($method);
-        } else {
-            return new $class();
-        }
+    public function index() {
+        throw new \Exception("Controller has no index() method.");
     }
 
     public function test() {
-	    var_dump("no i co?");
+	    var_dump("test() from abstract Controller.php");
     }
-
-	public function redirect($url) {
-		
-	}
 
 	public function setContainer(\DI\Container $container) {
 		$this->container = $container;

@@ -25,19 +25,18 @@ class Router {
     private $default_route;
 
     /**
+     * Present route set
+     * @var
+     */
+    private $present_route;
+
+    /**
      * Constructor
      */
     public function __construct($routes, $default_route) {
         $this->segments = array_slice(explode("/", $_SERVER["REQUEST_URI"] ),1);
-
         $this->routes = $routes;
-
         $this->default_route = $default_route;
-        //var_dump($this->segments);
-        //var_dump($this->routes);
-
-        //$container = new \DI\Container();
-        //var_dump($container->get('test'))
     }
 
     public function explodeSegments($segments) {
@@ -75,13 +74,19 @@ class Router {
             if(strlen($found) === 0) {
                 $array = $this->explodeSegments($givenRoutes);
                 array_pop($array);
+
+                // break recurrency if no route found in last iteration
+                if($givenRoutes !== NULL && count($this->explodeSegments($givenRoutes)) === 1)
+                    throw new \Exception("No route.");
+
                 return $this->route($this->implodeSegments($array));
             } else {
+                $this->present_route = $found;
                 return ['pattern' => $found, 'method' => $method, 'controller' => $controller];
             }
         } else {
+            $this->present_route = $this->default_route['pattern'];
             return $this->default_route;
-            return ['pattern' => $found, 'method' => $method, 'controller' => $controller];
         }
     }
 

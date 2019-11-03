@@ -3,20 +3,23 @@
 namespace Framework\App\Controllers;
 
 use Framework\Core\Controller as Controller;
+use Framework\Core\View;
 
 class Login extends Controller {
 
     public function index() {
         var_dump("login");
-        var_dump($this->getContainer());
-    }
-
-    public function test() {
-        //var_dump($this->getContainer());
-        //var_dump($this->getContainer()->get("test"));
     }
 
     public function register() {
-        var_dump("register");
+        $template = new View('index');
+
+        return $template->set('test', "Testowy tekst")
+            ->set('array', ['test1', 'test2', 'test3', 'test4'])
+            ->render();
+
+
+        //var_dump("register");
+        //var_dump($this->getContainer()->get("app.router"));
     }
 }
