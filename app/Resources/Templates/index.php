@@ -11,10 +11,6 @@
 
     <body>
         <h1>Siemano</h1>
-        <p>Witam w mojej kuchni. {$test}</p>
-        {loop:array}
-
-        {endloop:array}
-        <p>{$array}</p>
+        <p>Witam w mojej kuchni. <?=$string;?></p>
     </body>
 </html>
