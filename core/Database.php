@@ -4,7 +4,15 @@
 namespace Framework\Core;
 
 
-class Database
+abstract class Database
 {
+    private $handler;
 
+    public function setHandler($handler) {
+        $this->handler = $handler;
+    }
+
+    public function getHandler() {
+        return $this->handler;
+    }
 }

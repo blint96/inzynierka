@@ -20,10 +20,6 @@ abstract class Controller {
         throw new \Exception("Controller has no index() method.");
     }
 
-    public function test() {
-	    var_dump("test() from abstract Controller.php");
-    }
-
 	public function setContainer(\DI\Container $container) {
 		$this->container = $container;
 	}
