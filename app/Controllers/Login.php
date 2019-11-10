@@ -13,18 +13,19 @@ class Login extends Controller {
     }
 
     public function register() {
-        $mysql = $this->getContainer()->get('driver.mysql');
 
-        if($mysql->connect())
-            $mysql->setDatabase("inzynierka");
+        $session = $this->getContainer()->get('app.session');
+        var_dump($session->test);
+
+        // prepare data
 
         $userModel = $this->getContainer()->get('model.user');
-        $userModel->test();
-        //$userModel = \Framework\Core\Model::factory($this, '\Framework\App\Models\User');
-        //$userModel->test();
-        //$userModel = $this->getContainer()->get(User::class)->__construct($this->getContainer());
-        //$userModel->test();
+        $users = $userModel->getAll();
 
+        $user = $userModel->getUser(1);
+        var_dump($user);
+
+        // render view
         View::load_view('index',
             ["array" => ["string1", "string2", "string3"], "string" => "Test stringgg", "int" => 1000]);
     }

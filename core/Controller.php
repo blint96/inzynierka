@@ -22,9 +22,23 @@ abstract class Controller {
 
 	public function setContainer(\DI\Container $container) {
 		$this->container = $container;
+
+		// bootstrap
+        $this->bootstrap();
 	}
 
 	public function getContainer() {
 		return $this->container;
 	}
+
+    /**
+     * Bootstrap libraries
+     */
+	private function bootstrap() {
+        $mysql = $this->getContainer()->get('driver.mysql');
+
+        if($mysql->connect()) {
+            $mysql->setDatabase("inzynierka");
+        }
+    }
 }

@@ -54,20 +54,32 @@ class MySQLDriver extends Database implements DatabaseInterface
             $this->getHandler()->close();
     }
 
-    public function select() {
-        // TODO: Implement select() method.
+    public function fetch($query, $type = MYSQLI_ASSOC) {
+        return $query->fetch_array($type);
     }
 
-    public function insert() {
-        // TODO: Implement insert() method.
+    public function fetchAll($query, $type = MYSQLI_ASSOC) {
+        return $query->fetch_all($type);
     }
 
-    public function delete() {
-        // TODO: Implement delete() method.
+    public function query($sql) {
+        return $this->getHandler()->query($sql);
     }
 
-    public function update() {
-        // TODO: Implement update() method.
+    public function select($sql) {
+        return $this->query($sql);
+    }
+
+    public function insert($sql) {
+        return $this->query($sql);
+    }
+
+    public function delete($sql) {
+        return $this->query($sql);
+    }
+
+    public function update($sql) {
+        return $this->query($sql);
     }
 
     public function setDatabase($database) {
