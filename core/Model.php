@@ -8,7 +8,13 @@ abstract class Model {
 
     public function __construct(\DI\Container $container)
     {
-        $this->db = $container->get('driver.mysql');
+        $config = $container->get('app.config');
+
+        if($config['mysql']['enabled']) {
+            $this->db = $container->get('driver.mysql');
+        } else if($config['sqlite']['enabled']) {
+            $this->db = $container->get('driver.sqlite');
+        }
     }
 
     public function getDb() {

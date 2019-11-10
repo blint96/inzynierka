@@ -14,6 +14,7 @@ $loader = require_once __DIR__ . '/vendor/autoload.php';
  */
 require_once __DIR__. '/config/routes.php';
 require_once __DIR__. '/config/config.php';
+require_once __DIR__. '/config/database.php';
 
 /*
  *---------------------------------------------------------------
@@ -73,23 +74,18 @@ $container = $builder->build();
  */
 $router = new \Framework\Core\Router($config['routes'], $config['default_route']);
 $target = $router->route();
+$container->set("app.router", $router); // assign router to container
+$container->set("app.config", $config); // assign config to container
 
 /*
  *---------------------------------------------------------------
- * Session
+ * SESSION
  *---------------------------------------------------------------
  */
 if($config['session']['enabled']) {
     $session = new \Framework\Core\Session();
     $container->set("app.session", $session);
 }
-
-/*
- *---------------------------------------------------------------
- * ASSIGN VALUES TO DI
- *---------------------------------------------------------------
- */
-$container->set("app.router", $router);
 
 /*
  *---------------------------------------------------------------

@@ -13,16 +13,14 @@ class Login extends Controller {
     }
 
     public function register() {
-
+        // get the session service $session->variable;
         $session = $this->getContainer()->get('app.session');
-        var_dump($session->test);
 
         // prepare data
-
         $userModel = $this->getContainer()->get('model.user');
         $users = $userModel->getAll();
-
         $user = $userModel->getUser(1);
+
         var_dump($user);
 
         // render view
