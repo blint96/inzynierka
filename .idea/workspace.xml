@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e62a3e6-d14e-4112-ab4d-4cc09d09ae21" name="Default Changelist" comment="" />
+    <list default="true" id="0e62a3e6-d14e-4112-ab4d-4cc09d09ae21" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Session.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Session.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -30,7 +37,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1T3YUwGMN9cjJG1b2fa3r1rLjg9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -38,7 +47,8 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -63,11 +73,72 @@
       <option name="presentableId" value="Default" />
       <updated>1572690265482</updated>
       <workItem from="1572690269003" duration="821000" />
-      <workItem from="1572696491970" duration="3276000" />
+      <workItem from="1572696491970" duration="10569000" />
+      <workItem from="1572782262079" duration="3786000" />
+      <workItem from="1573301456781" duration="6925000" />
+      <workItem from="1573399430656" duration="4126000" />
+      <workItem from="1574007881036" duration="593000" />
     </task>
+    <task id="LOCAL-00001" summary="view init">
+      <created>1572782302496</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1572782302496</updated>
+    </task>
+    <task id="LOCAL-00002" summary="view without templating engine">
+      <created>1572786073762</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1572786073762</updated>
+    </task>
+    <task id="LOCAL-00003" summary="models init">
+      <created>1573309645778</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1573309645779</updated>
+    </task>
+    <task id="LOCAL-00004" summary="sessions &amp; mysql driver improve">
+      <created>1573401570562</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1573401570563</updated>
+    </task>
+    <task id="LOCAL-00005" summary="sqlite driver">
+      <created>1573403090105</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1573403090105</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="view init" />
+    <MESSAGE value="view without templating engine" />
+    <MESSAGE value="models init" />
+    <MESSAGE value="sessions &amp; mysql driver improve" />
+    <MESSAGE value="sqlite driver" />
+    <option name="LAST_COMMIT_MESSAGE" value="sqlite driver" />
   </component>
 </project>
